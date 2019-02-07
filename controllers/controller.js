@@ -4,8 +4,8 @@ var path = require('path');
 var request = require('request');
 var cheerio = require('cheerio');
 
-var articles = require("../models/articles.js");
-var note = require("../models/note.js");
+var Article = require("../models/articles.js");
+var Note = require("../models/note.js");
 
 router.get("/", function (req, res){
     res.redirect("/scrape")

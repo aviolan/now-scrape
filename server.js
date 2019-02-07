@@ -24,18 +24,10 @@ if(process.env.MONGODB_URI){
 else{
   mongoose.connect('mongodb://localhost/mongoHeadlines');
 }
-var db = mongoose.connect(MONGODB_URI);
+var db = mongoose.connect;
 
-db.on('error', function(err) {
-  console.log('Mongoose Error: ', err);
-});
-
-db.once('open', function() {
-  console.log('Mongoose connection successful.');
-});
-
-var note = require('./models/note.js');
-var articles = require('./models/article.js');
+var Comment = require('./models/note.js');
+var Article = require('./models/articles.js');
 
 var router = require('./controllers/controller.js');
 app.use('/', router);
